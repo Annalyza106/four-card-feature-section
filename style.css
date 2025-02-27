@@ -76,6 +76,7 @@ body {
     display: grid;
     place-items: center;
     line-height: 1.25;
+    background-color: hsl(0, 0%, 93%); 
 }
 
 .title {
@@ -110,9 +111,10 @@ body {
     margin-right: auto;
     margin-top: 2rem ;
     max-width: 380px;
+    background-color: var(--clr-neutral-white);
 
     border-radius: 8px;
-    box-shadow: 2px 18px 20px 1px hsl(212, 100%, 89%);
+    box-shadow: 2px 18px 20px 1px hsl(212, 47%, 83%);
     display: grid;
     --border: 5px solid;
 }
