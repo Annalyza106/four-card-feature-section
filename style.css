@@ -1,0 +1,161 @@
+/* CSS resets */
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+  }
+  
+  body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* 5. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* 6. Inherit fonts for form controls */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /* 7. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /* 8. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+}
+
+/*
+9. Create a root stacking context
+*/
+#root, #__next {
+    isolation: isolate;
+}
+
+  /* Custom property */
+  
+  :root {
+      /* Colors */
+      --clr-primary-red: hsl(0, 78%, 62%);
+      --clr-primary-cyan: hsl(180, 62%, 55%);
+      --clr-primary-orange: hsl(34, 97%, 64%);
+      --clr-primary-blue: hsl(212, 86%, 64%);
+      
+    --clr-neutral-grey-500: hsl(234, 12%, 34%);
+    --clr-neutral-grey-400: hsl(212, 6%, 44%);
+    --clr-neutral-white: hsl(0, 0%, 100%);
+    
+    --ff-primary: 'Poppins', sans-serif;
+
+    --fw-thin: 200;
+    --fw-semibold: 400;
+    --fw-bold: 600;
+}
+
+body {
+    background-color: var(--clr-neutral-white);
+    font-family: var(--ff-primary);
+    font-size: 15px;
+    color: var(--clr-neutral-grey-500);
+    padding: 4em 2em;
+    display: grid;
+    place-items: center;
+    line-height: 1.25;
+}
+
+.title {
+    font-size: clamp(1.2rem, calc(1.1rem + 1.4444vw), 2.2rem);
+    text-align: center;
+}
+
+.title.thin {
+    font-weight: var(--fw-thin);
+}
+
+.title.bold {
+    font-weight: var(--fw-bold);
+}
+
+.desc {
+    width: auto;
+    max-width: 500px;
+    margin: 1.2em auto;
+    text-align: center;
+}
+
+.card__container {
+    width: auto;
+    max-width: 1000px;
+    display: grid;
+}
+
+.card{
+    padding: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem ;
+    max-width: 380px;
+
+    border-radius: 8px;
+    box-shadow: 2px 18px 20px 1px hsl(212, 100%, 89%);
+    display: grid;
+    --border: 5px solid;
+}
+
+.card > img {
+    max-width: 3.75rem;
+    place-self: end;
+    margin: 1em 0;
+}
+
+.card__title {
+    font-size: 1.1rem;
+    font-weight: var(--fw-bold);
+    margin-bottom: 0.5rem;
+}
+
+.card__subtitle {
+    font-size: 0.8rem;
+    font-weight: var(--fw-semibold);
+    color: var(--clr-neutral-grey-400);
+}
+
+.card__1 {
+    border-top: var(--border) var(--clr-primary-cyan);
+}
+
+.card__2 {
+    border-top: var(--border) var(--clr-primary-red);
+}
+
+.card__3 {
+    border-top: var(--border) var(--clr-primary-orange);
+}
+
+.card__4 {
+    border-top: var(--border) var(--clr-primary-blue);
+}
+
+@media (min-width: 850px ) {
+    .card__container {
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        gap: 2em;
+    }
+
+}
